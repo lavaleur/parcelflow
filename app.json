@@ -1,36 +1,61 @@
-{
-  "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router"
-    ],
-    "experiments": {
-      "typedRoutes": true
+import json
+
+# Original configuration provided by the user
+expo_config = {
+    "expo": {
+        "name": "ParcelFlow",
+        "slug": "ParcelFlow",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/images/icon.png",
+        "scheme": "myapp",
+        "userInterfaceStyle": "automatic",
+        "splash": {
+            "image": "./assets/images/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#ffffff"
+        },
+        "ios": {
+            "supportsTablet": True
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/images/adaptive-icon.png",
+                "backgroundColor": "#ffffff"
+            }
+        },
+        "web": {
+            "bundler": "metro",
+            "output": "static",
+            "favicon": "./assets/images/favicon.png"
+        },
+        "plugins": [
+            "expo-router"
+        ],
+        "experiments": {
+            "typedRoutes": True
+        },
+        "extra": {
+            "eas": {
+                "projectId": "6dbbef74-8685-4955-bdbd-02963fb029e0"
+            }
+        },
+        "runtimeVersion": {
+            "policy": "appVersion"
+        },
+        "updates": {
+            "url": "https://u.expo.dev/6dbbef74-8685-4955-bdbd-02963fb029e0"
+        }
     }
-  }
 }
+
+# Apply the suggested changes
+expo_config["expo"]["slug"] = "parcelflow"  # Make slug lowercase
+expo_config["expo"]["scheme"] = "parcelflow"  # Update scheme to match new project name
+
+# Save the updated configuration to a JSON file
+file_path = "/mnt/data/updated_app.json"
+with open(file_path, "w") as file:
+    json.dump(expo_config, file, indent=2)
+
+file_path
